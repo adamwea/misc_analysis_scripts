@@ -1,8 +1,10 @@
-from RBS_network_models.CDKL5.DIV21.src.batch import batchEvol
+#from RBS_network_models.CDKL5.DIV21.src.batch import batchEvol
+
+from RBS_network_models.Organoid_RTT_R270X.DIV112_WT.src.batch import batchEvol_v2 as batchEvol
 from mpi4py import MPI
 kwargs = {
     #'feature_path' : '/pscratch/sd/a/adammwea/workspace/RBS_network_models/data/CDKL5/DIV21/features/20250204_features.py',
-    'feature_path' : '/pscratch/sd/a/adammwea/workspace/RBS_network_models/data/CDKL5/DIV21/features/20250207_features.py',    
+   # 'feature_path' : '/pscratch/sd/a/adammwea/workspace/RBS_network_models/data/CDKL5/DIV21/features/20250207_features.py',    
     'mpiCommand' :             
             'srun'
             ' --nodes=1' # number of nodes

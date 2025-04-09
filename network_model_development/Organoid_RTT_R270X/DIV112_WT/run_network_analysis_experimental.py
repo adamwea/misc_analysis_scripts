@@ -22,7 +22,7 @@ from RBS_network_models.Organoid_RTT_R270X.DIV112_WT.src.conv_params import conv
 # Paths =============================================================================
 raw_data_paths = [
     #'/pscratch/sd/a/adammwea/workspace/_raw_data/CDKL5-E6D_T2_C1_05212024/CDKL5-E6D_T2_C1_05212024/240611/M08029/Network/000091/data.raw.h5'
-    '/pscratch/sd/a/adammwea/workspace/_raw_data/Organoid_RTT_R270X_pA_pD_B1_d91/250107/M07297/Network/000028/data.raw.h5',
+    #'/pscratch/sd/a/adammwea/workspace/_raw_data/Organoid_RTT_R270X_pA_pD_B1_d91/250107/M07297/Network/000028/data.raw.h5',
 ]
 sorted_data_dir = (
     #'**/data/CDKL5/DIV21/sorted'   #syntax for glob.glob
@@ -64,10 +64,17 @@ feature_data = ef.analyze_network_data(
 print("Network Analysis Complete.")
 
 # Perlmutter =============================================================================
+# '''
+# salloc -A m2043 -q interactive -C cpu -t 04:00:00 --nodes=1 --image=adammwea/axonkilo_docker:v7
+# module load conda
+# conda activate netsims_env
+# mkdir -p /pscratch/sd/a/adammwea/workspace/RBS_network_models/scripts/CDKL5/DIV21_WT/
+# python /pscratch/sd/a/adammwea/workspace/RBS_network_models/scripts/CDKL5/DIV21_WT/run_network_analysis.py
+# '''
 '''
 salloc -A m2043 -q interactive -C cpu -t 04:00:00 --nodes=1 --image=adammwea/axonkilo_docker:v7
 module load conda
 conda activate netsims_env
-mkdir -p /pscratch/sd/a/adammwea/workspace/RBS_network_models/scripts/CDKL5/DIV21_WT/
-python /pscratch/sd/a/adammwea/workspace/RBS_network_models/scripts/CDKL5/DIV21_WT/run_network_analysis.py
+mkdir -p /pscratch/sd/a/adammwea/zoutputs/Organoid_RTT_R270X/DIV112_WT/
+python /pscratch/sd/a/adammwea/wor
 '''
